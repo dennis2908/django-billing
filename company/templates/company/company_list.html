@@ -1,0 +1,56 @@
+{% extends "layout/default.html" %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+			<h2>Form Company</h2>
+                <form id="company_submit">
+				          {% csrf_token %}
+						  <div class="form-group">
+							<label for="company_code">Company Code</label>
+							<input type="text" class="form-control" id="company_code" style="width:500px"  name="company_code" placeholder="Enter Company Code" required>
+						  </div>
+						  <div class="form-group">
+							<label for="company_name">Company Name</label>
+							<input type="text" class="form-control" id="company_name" style="width:500px"  name="company_name" placeholder="Enter Company Name" required>
+						  </div>
+						  <div class="form-group">
+							<label for="phone_number">Phone Number</label>
+							<input type="text" class="form-control" id="phone_number" style="width:500px"  name="phone_number" placeholder="Enter Phone Number" required>
+						  </div>
+						  <div class="form-group">
+							<label for="address">Address</label>
+							<textarea class="form-control" id="address" name="address" style="width:500px" placeholder="Enter Address" required></textarea>
+						  </div>
+						
+			   </form>
+			   
+			   <input type="hidden" id="id">
+			   
+			   <button type="submit" id="add_save" class="btn btn-primary">Submit</button>
+			   
+            </div>
+        </div>
+		<div class="form-group">
+				 <input type="text" class="form-control" id="search" placeholder="Search Company Code Or Company Name Here" style="margin-left:300px;width:500px">
+		</div>
+        <div class="row">
+            <div class="col-md-12">
+				<table class="table table-bordered"id="table_content">
+				    <thead>
+					<tr class="info">
+						<th>No</th><th>Action</th><th>Company Code</th><th>Company Name</th><th>Phone Number</th><th>Company Address</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>	
+            </div>
+        </div>
+    </div>
+	<script src="/static/js/jquery-2.2.0.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/app_company.js"></script>
+<div class="container">
+</div>	
+{% endblock content %}

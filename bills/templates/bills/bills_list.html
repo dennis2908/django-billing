@@ -1,0 +1,54 @@
+{% extends "layout/default.html" %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+			<h2>Form Company's Bill</h2>
+                <form id="company_submit">
+				{% csrf_token %}
+			              <div class="form-group">
+							<label for="company_code">Company Name</label>
+							   <select class="form-control"id="company_code" style="width:500px" name="company_code" aria-describedby="company_code" required>
+							   </select>
+						  </div>
+						   <div class="form-group">
+							<label for="bill">Bill</label>
+							<input type="number" class="form-control" id="bill" style="width:500px"  name="bill" placeholder="Enter Bill" required>
+						  </div>
+						  <div class="form-group">
+							<label for="note">Note</label>
+							<textarea class="form-control" id="note" name="note" style="width:500px" placeholder="Enter Note" required></textarea>
+						  </div>
+						
+			   </form>
+			   <div class="form-group">
+				   <input type="hidden" id="id" name="id">
+				   <button type="submit" id="add_save" class="btn btn-primary">Submit</button>
+			   </div>
+			   
+			   
+            </div>
+        </div>
+        <div class="form-group row"  style="margin-left:350px">
+			<div class="col-sm-7">
+			  <input class="form-control" id="search" type="text" placeholder="Enter Company Code Or Company Name">
+			</div>
+			<button type="submit" id="search_btn" class="btn btn-primary">Search</button>
+		</div>		
+        <div class="row">
+            <div class="col-md-12">
+				<table class="table table-bordered"id="table_content">
+				    <thead>
+					<tr class="info">
+						<th>No</th><th>Action</th><th>Company Code - Company Name</th><th>Note</th><th>Bill</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>	
+            </div>
+        </div>
+    </div>
+	<script src="/static/js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="/static/app_bill.js"></script>
+{% endblock content %}
